@@ -1,0 +1,21 @@
+Notepad Clone
+------------------
+
+TODO
+------
+New button - Check if changes have been made and give options to save
+Open - Remeber where you opened from last time
+Save
+Save As
+page setup
+Print
+exit
+
+
+
+
+
+
+
+Notes
+-------
