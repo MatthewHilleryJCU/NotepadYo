@@ -17,6 +17,8 @@ import java.io.*;
 
 public class Main extends Application {
     TextArea textArea = new TextArea();
+    private File filePath = null;
+    FileChooser fileChooser = new FileChooser();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -49,10 +51,13 @@ public class Main extends Application {
             //Save
         MenuItem saveFile = new MenuItem("Save");
         saveFile.setAccelerator(KeyCombination.keyCombination("Ctrl+S"));
-        saveFile.setOnAction(e -> );
+//        saveFile.setOnAction(e -> );
 
             //Save As
         MenuItem saveAsFile = new MenuItem("Save As...");
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("Text Files", "*.txt"));
+        saveAsFile.setOnAction(e -> fileChooser.showSaveDialog(primaryStage));
 
             //Page Setup
         MenuItem pageSetupFile = new MenuItem("Page Setup...");
@@ -95,7 +100,6 @@ public class Main extends Application {
     }
 
         private void openFilex (Stage stage) {
-            FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Opens");
             fileChooser.getExtensionFilters().addAll(
                     new ExtensionFilter("Text Files", "*.txt"));
@@ -152,6 +156,7 @@ public class Main extends Application {
 
             return fullText;
         }
+
 
 }
 
